@@ -1,7 +1,14 @@
 import { useRef, useState, useEffect } from 'react';
-import giftImage from '../assets/gift.png';
+import GiftRed from '../assets/gift-red.jpg';
+import GiftAnimation from '../assets/gift-animation.gif';
 import { launchConfetti } from '../utils/confetti';
 import { Download, Refresh } from './Icons';
+
+
+const Gift = {
+    red: GiftRed,
+    animation: GiftAnimation
+}
 
 const ScratchCard = () => {
 	const canvasRef = useRef(null);
@@ -11,6 +18,7 @@ const ScratchCard = () => {
 	const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
 	const [isHovering, setIsHovering] = useState(false);
 	const [lastPosition, setLastPosition] = useState(null);
+    const [gift, setGift] = useState(Gift.red);
 
 	const width = 400;
 	const height = 550;
@@ -72,6 +80,7 @@ const ScratchCard = () => {
 		if (percentage > 80) {
 			setIsComplete(true);
 			launchConfetti();
+            setGift(Gift.animation);
 			ctx.clearRect(0, 0, width, height);
 		}
 	};
@@ -86,13 +95,7 @@ const ScratchCard = () => {
 		ctx.fillRect(0, 0, width, height);
 		ctx.globalCompositeOperation = 'destination-out';
 		setIsComplete(false);
-	};
-
-	const handleDownload = () => {
-		const link = document.createElement('a');
-		link.href = giftImage;
-		link.download = 'feliz_navidad_Tania.png';
-		link.click();
+        setGift(Gift.red);
 	};
 
 	const handleMouseUp = () => {
@@ -121,7 +124,7 @@ const ScratchCard = () => {
 				onMouseMove={handleMouseMove}>
 				<img
 					ref={hiddenImageRef}
-					src={giftImage}
+					src={gift}
 					alt="Sorpresa"
 					className={`absolute object-cover pointer-events-none select-none ${isLoaded ? 'block' : 'hidden'}`}
 				/>
@@ -146,11 +149,13 @@ const ScratchCard = () => {
 				)}
 			</div>
 			<div className='flex justify-center w-full gap-4'>
-				<button
-					onClick={handleDownload}
+				<a
+					href="https://drive.google.com/drive/folders/1n_rVKBA70iI3Q-FDID2cdFPeCQbjw1f1?usp=sharing"
+                    target='_blank'
+                    rel='noreferrer noopener'
 					className={`grow flex gap-2 justify-center items-center px-4 py-2 bg-gradient-to-bl from-purple-500 to-fuchsia-500 text-white rounded ${isComplete ? 'opacity-1' : 'opacity-0'}`}>
 					Descargar <Download size={12}/>
-				</button>
+				</a>
 				<button
 					onClick={handleReset}
 					className={`grow flex gap-2 justify-center items-center px-4 py-2 bg-gray-500 text-white rounded ${isComplete ? 'opacity-1' : 'opacity-0'}`}>
