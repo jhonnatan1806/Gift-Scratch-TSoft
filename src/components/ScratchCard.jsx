@@ -111,7 +111,7 @@ const ScratchCard = () => {
 	};
 
 	return (
-		<main className="flex flex-col items-center justify-center px-12 py-4 gap-4 rounded-md shadow-md bg-white/90">
+		<div className="flex flex-col items-center justify-center px-12 py-4 gap-4 rounded-md shadow-md bg-white/90">
             <div>
                 <h1 className="text-3xl font-extrabold bg-gradient-to-br from-red-300 to-fuchsia-500 bg-clip-text text-transparent leading-normal text-center">Feliz Navidad Tania</h1>
                 <h2 className="text-xl font-bold bg-gradient-to-br from-red-300 to-fuchsia-500 bg-clip-text text-transparent leading-normal text-center">¡Raspa y descubre la sorpresa!</h2>
@@ -162,7 +162,7 @@ const ScratchCard = () => {
 					Reiniciar <Refresh size={12}/>
 				</button>
 			</div>
-		</main>
+		</div>
 	);
 };
 
