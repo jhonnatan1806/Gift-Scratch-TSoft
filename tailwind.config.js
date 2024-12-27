@@ -4,8 +4,7 @@ export default {
 	theme: {
 		extend: {
             backgroundImage: {
-				// Agrega patrones personalizados
-				'pattern-snowflake': `url(./snowflake.png)`,
+				'pattern-snowflake': "url('/snowflake.png')",
 			},
 			backgroundSize: {
 				'pattern-small': '400px 400px',
