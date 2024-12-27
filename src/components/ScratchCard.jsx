@@ -110,8 +110,8 @@ const ScratchCard = () => {
 	return (
 		<main className="flex flex-col items-center justify-center h-screen gap-4">
             <div>
-                <h1 className="text-4xl font-extrabold bg-gradient-to-bl from-purple-500 to-fuchsia-400 bg-clip-text text-transparent leading-normal text-center">Feliz Navidad Tania</h1>
-                <h2 className="text-2xl font-bold  text-fuchsia-400 text-center">¡Rasca y descubre la sorpresa! 🎄</h2>
+                <h1 className="text-4xl font-extrabold bg-gradient-to-bl from-purple-500 to-fuchsia-500 bg-clip-text text-transparent leading-normal text-center">Feliz Navidad Tania</h1>
+                <h2 className="text-2xl font-bold  text-fuchsia-500 text-center">🎄¡Raspa y descubre la sorpresa!🎄</h2>
             </div>
 			<div
 				className={`relative`}
@@ -148,7 +148,7 @@ const ScratchCard = () => {
 			<div className='flex justify-center w-full gap-4'>
 				<button
 					onClick={handleDownload}
-					className={`grow flex gap-2 justify-center items-center px-4 py-2 bg-purple-500 text-white rounded ${isComplete ? 'opacity-1' : 'opacity-0'}`}>
+					className={`grow flex gap-2 justify-center items-center px-4 py-2 bg-gradient-to-bl from-purple-500 to-fuchsia-500 text-white rounded ${isComplete ? 'opacity-1' : 'opacity-0'}`}>
 					Descargar <Download size={12}/>
 				</button>
 				<button
