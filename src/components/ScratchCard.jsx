@@ -111,10 +111,10 @@ const ScratchCard = () => {
 	};
 
 	return (
-		<main className="flex flex-col items-center justify-center h-screen gap-4">
+		<main className="flex flex-col items-center justify-center px-16 py-8 gap-4 rounded-md shadow-md bg-white/90">
             <div>
-                <h1 className="text-4xl font-extrabold bg-gradient-to-bl from-purple-500 to-fuchsia-500 bg-clip-text text-transparent leading-normal text-center">Feliz Navidad Tania</h1>
-                <h2 className="text-2xl font-bold  text-fuchsia-500 text-center">🎄¡Raspa y descubre la sorpresa!🎄</h2>
+                <h1 className="text-4xl font-extrabold bg-gradient-to-br from-red-300 to-fuchsia-500 bg-clip-text text-transparent leading-normal text-center">Feliz Navidad Tania</h1>
+                <h2 className="text-2xl font-bold bg-gradient-to-br from-red-300 to-fuchsia-500 bg-clip-text text-transparent leading-normal text-center">¡Raspa y descubre la sorpresa!</h2>
             </div>
 			<div
 				className={`relative`}
@@ -153,12 +153,12 @@ const ScratchCard = () => {
 					href="https://drive.google.com/drive/folders/1n_rVKBA70iI3Q-FDID2cdFPeCQbjw1f1?usp=sharing"
                     target='_blank'
                     rel='noreferrer noopener'
-					className={`grow flex gap-2 justify-center items-center px-4 py-2 bg-gradient-to-bl from-purple-500 to-fuchsia-500 text-white rounded ${isComplete ? 'opacity-1' : 'opacity-0'}`}>
+					className={`grow flex font-medium text-lg gap-2 justify-center items-center px-4 py-2 bg-gradient-to-br from-rose-400 to-fuchsia-400 text-white rounded ${isComplete ? 'opacity-1' : 'opacity-0'}`}>
 					Descargar <Download size={12}/>
 				</a>
 				<button
 					onClick={handleReset}
-					className={`grow flex gap-2 justify-center items-center px-4 py-2 bg-gray-500 text-white rounded ${isComplete ? 'opacity-1' : 'opacity-0'}`}>
+					className={`grow flex font-medium text-lg gap-2 justify-center items-center px-4 py-2 bg-gradient-to-bl from-slate-500 to-gray-600 text-white rounded ${isComplete ? 'opacity-1' : 'opacity-0'}`}>
 					Reiniciar <Refresh size={12}/>
 				</button>
 			</div>
